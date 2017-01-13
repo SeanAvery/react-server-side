@@ -6,8 +6,8 @@ export default class App extends Component {
 
     return (
       <div>
-        <h1>hello world</h1>
+        <h1>hello world {isMobile ? 'mobile' : 'desktop'}</h1>
       </div>
-    )
+    );
   }
 }
