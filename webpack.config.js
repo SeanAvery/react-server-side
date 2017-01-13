@@ -19,7 +19,27 @@ module exports = [
       loaders: [
         test: /\.js$/,
         loader: 'babel'
+      ].concat(commonLoaders)
+    }
+  },
+  {
+    entry: './src/app/browser.js',
+    output: {
+      path: './dist/assets',
+      publicPath: '/',
+      filename: 'bundle.js'
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel'
+        }
       ]
+    },
+    resolve: {
+      extensions: ['', '.js', '.jsx']
     }
   }
 ]
